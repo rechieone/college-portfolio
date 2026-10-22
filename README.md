@@ -19,4 +19,4 @@ HTML, CSS, Tilda (для дизайн-проектов)
 
 ## Контакты
 
-- Email: ваша_почта@example.com
+- Email: kammlahusnutdinova@gmail.com
