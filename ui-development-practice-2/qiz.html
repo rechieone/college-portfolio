@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Викторина: Животные</title>
+    <style>
+        body, html
+        {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-size: 16px;
+            font-family: helvetica, arial;
+            background: #f9f9f9;
+            color: #111;
+        }
+         
+        .wrapper
+        {
+            width: 100%;
+            height: 100%;
+            display: table;
+        }
+         
+        .main
+        {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+         
+        .quiz-frame
+        {
+            border: 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+         
+        .quiz__head
+        {
+            font-size: 20pt;
+            margin: 10px;
+            margin-bottom: 50px;
+        }
+         
+        .head__content
+        {
+            padding: 5px;
+        }
+         
+        .quiz__body
+        {
+            margin: 10px;
+        }
+         
+        .quiz__footer
+        {
+            position: absolute;
+            bottom: 0;
+            display: block;
+            width: 100%;
+        }
+         
+        .footer__content
+        {
+            padding: 5px;
+        }
+         
+        .button
+        {
+            border: 0;
+            border-radius: 10px;
+            background: #6477EB;
+            color: #fff;
+            padding: 10px 25px;
+            width: 70%;
+            font-size: 15pt;
+            display: block;
+            margin: 2px auto;
+            cursor: pointer;
+        }
+         
+        .button_wrong
+        {
+            background: #EB6465;
+        }
+         
+        .button_correct
+        {
+            background: #5EB97D;
+        }
+         
+        .button_passive
+        {
+            background: #B3B3B3;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <main class="main">
+        <div class="quiz__head">
+            <div class="head__content" id="head">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        </div>
+        <div class="quiz__body">
+            <div class="buttons">
+                <div class="buttons__content" id="buttons">
+                    <button class="button">Default button</button><br>
+                    <button class="button button_wrong">Wrong answer</button><br>
+                    <button class="button button_correct">Correct answer</button><br>
+                    <button class="button button_passive">Unclicked button</button><br>
+                </div>
+            </div>
+ 
+            <div class="quiz__footer">
+                <div class="footer__content" id="pages">0 / 0</div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+    class Quiz
+    {
+        constructor(type, questions, results)
+        {
+            this.type = type;
+            this.questions = questions;
+            this.results = results;
+            this.score = 0;
+            this.result = 0;
+            this.current = 0;
+        }
+     
+        Click(index)
+        {
+            let value = this.questions[this.current].Click(index);
+            this.score += value;
+     
+            let correct = -1;
+     
+            if(value >= 1)
+            {
+                correct = index;
+            }
+            else
+            {
+                for(let i = 0; i < this.questions[this.current].answers.length; i++)
+                {
+                    if(this.questions[this.current].answers[i].value >= 1)
+                    {
+                        correct = i;
+                        break;
+                    }
+                }
+            }
+     
+            this.Next();
+            return correct;
+        }
+     
+        Next()
+        {
+            this.current++;
+            if(this.current >= this.questions.length)
+            {
+                this.End();
+            }
+        }
+     
+        End()
+        {
+            for(let i = 0; i < this.results.length; i++)
+            {
+                if(this.results[i].Check(this.score))
+                {
+                    this.result = i;
+                }
+            }
+        }
+    }
+     
+    class Question
+    {
+        constructor(text, answers)
+        {
+            this.text = text;
+            this.answers = answers;
+        }
+     
+        Click(index)
+        {
+            return this.answers[index].value;
+        }
+    }
+     
+    class Answer
+    {
+        constructor(text, value)
+        {
+            this.text = text;
+            this.value = value;
+        }
+    }
+     
+    class Result
+    {
+        constructor(text, value)
+        {
+            this.text = text;
+            this.value = value;
+        }
+     
+        Check(value)
+        {
+            if(this.value <= value)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    const results = [
+        new Result(" Изучай животных дальше — мир удивителен", 0),
+        new Result("Любопытный исследователь. Неплохой результат, но есть куда расти", 6),
+        new Result("Знаток! Ты очень хорошо знаешь животных!", 13),
+        new Result("Король зверей! Поздравляю!", 18)
+    ];
+
+    const questions = [
+        new Question("Какое животное является самым высоким на планете?",
+            [new Answer("Слон", 0), new Answer("Жираф", 1), new Answer("Бегемот", 0), new Answer("Носорог", 0)]),
+        new Question("Какое из этих животных — сумчатое?",
+            [new Answer("Лев", 0), new Answer("Кенгуру", 1), new Answer("Зебра", 0), new Answer("Медведь", 0)]),
+        new Question("Какая птица умеет подражать человеческой речи лучше всех?",
+            [new Answer("Ворона", 0), new Answer("Попугай жако", 1), new Answer("Соловей", 0), new Answer("Скворец", 0)]),
+        new Question("Кто из этих животных — самое быстрое сухопутное животное?",
+            [new Answer("Лев", 0), new Answer("Гепард", 1), new Answer("Антилопа", 0), new Answer("Страус", 0)]),
+        new Question("Какое животное известно своей способностью менять цвет?",
+            [new Answer("Осьминог", 0), new Answer("Хамелеон", 1), new Answer("Кальмар", 0), new Answer("Лягушка", 0)]),
+        new Question("Где обитают панды?",
+            [new Answer("В Африке", 0), new Answer("В Китае", 1), new Answer("В Южной Америке", 0), new Answer("В Австралии", 0)]),
+        new Question("У какого животного самые длинные клыки?",
+            [new Answer("Слон", 0), new Answer("Морж", 1), new Answer("Тигр", 0), new Answer("Кабан", 0)]),
+        new Question("Какое животное является национальным символом Австралии?",
+            [new Answer("Коала", 0), new Answer("Кенгуру", 1), new Answer("Утконос", 0), new Answer("Ехидна", 0)]),
+        new Question("Какая змея самая ядовитая в мире?",
+            [new Answer("Гремучая змея", 0), new Answer("Тайпан", 1), new Answer("Кобра", 0), new Answer("Маба", 0)]),
+        new Question("Какое млекопитающее умеет летать?",
+            [new Answer("Белка-летяга", 0), new Answer("Летучая мышь", 1), new Answer("Лемур", 0), new Answer("Опоссум", 0)]),
+        new Question("Сколько сердец у осьминога?",
+            [new Answer("Одно", 0), new Answer("Три", 1), new Answer("Два", 0), new Answer("Четыре", 0)]),
+        new Question("Какое животное самое крупное на Земле?",
+            [new Answer("Синий кит", 1), new Answer("Слон", 0), new Answer("Кашалот", 0), new Answer("Акула", 0)]),
+        new Question("Полярные медведи живут...",
+            [new Answer("В Антарктиде", 0), new Answer("В Арктике", 1), new Answer("В Сибири", 0), new Answer("В Гренландии", 0)]),
+        new Question("Какое животное может обходиться без воды дольше всех?",
+            [new Answer("Верблюд", 1), new Answer("Жираф", 0), new Answer("Слон", 0), new Answer("Кенгуру", 0)]),
+        new Question("Кто из этих животных не является кошкой?",
+            [new Answer("Рысь", 0), new Answer("Гиена", 1), new Answer("Леопард", 0), new Answer("Пума", 0)]),
+        new Question("Какая птица является символом мудрости?",
+            [new Answer("Ворон", 0), new Answer("Сова", 1), new Answer("Орел", 0), new Answer("Фламинго", 0)]),
+        new Question("Какое животное строит плотины?",
+            [new Answer("Выдра", 0), new Answer("Бобр", 1), new Answer("Ондатра", 0), new Answer("Нутрия", 0)]),
+        new Question("Как называется детёныш овцы?",
+            [new Answer("Козлёнок", 0), new Answer("Ягнёнок", 1), new Answer("Теленок", 0), new Answer("Жеребёнок", 0)]),
+        new Question("Какое животное спит вниз головой?",
+            [new Answer("Ленивец", 0), new Answer("Летучая мышь", 1), new Answer("Коала", 0), new Answer("Опоссум", 0)]),
+        new Question("У какого животного отпечатки пальцев почти неотличимы от человеческих?",
+            [new Answer("Шимпанзе", 0), new Answer("Коала", 1), new Answer("Горилла", 0), new Answer("Орангутан", 0)]),
+    ];
+
+    const quiz = new Quiz(1, questions, results);
+
+    const headElem = document.getElementById("head");
+    const buttonsElem = document.getElementById("buttons");
+    const pagesElem = document.getElementById("pages");
+
+    function Update()
+    {
+        if(quiz.current < quiz.questions.length)
+        {
+            headElem.innerHTML = quiz.questions[quiz.current].text;
+            buttonsElem.innerHTML = "";
+ 
+            for(let i = 0; i < quiz.questions[quiz.current].answers.length; i++)
+            {
+                let btn = document.createElement("button");
+                btn.className = "button";
+                btn.innerHTML = quiz.questions[quiz.current].answers[i].text;
+                btn.setAttribute("index", i);
+                buttonsElem.appendChild(btn);
+            }
+          
+            pagesElem.innerHTML = (quiz.current + 1) + " / " + quiz.questions.length;
+            Init();
+        }
+        else
+        {
+            buttonsElem.innerHTML = "";
+            headElem.innerHTML = quiz.results[quiz.result].text;
+            pagesElem.innerHTML = "Набрано очков: " + quiz.score + " из " + quiz.questions.length;
+        }
+    }
+ 
+    function Init()
+    {
+        let btns = document.getElementsByClassName("button");
+        for(let i = 0; i < btns.length; i++)
+        {
+            btns[i].addEventListener("click", function (e) { Click(e.target.getAttribute("index")); });
+        }
+    }
+ 
+    function Click(index)
+    {
+        let correct = quiz.Click(index);
+        let btns = document.getElementsByClassName("button");
+ 
+        for(let i = 0; i < btns.length; i++)
+        {
+            btns[i].className = "button button_passive";
+        }
+ 
+        if(quiz.type == 1)
+        {
+            if(correct >= 0)
+            {
+                btns[correct].className = "button button_correct";
+            }
+            if(index != correct)
+            {
+                btns[index].className = "button button_wrong";
+            }
+        }
+        else
+        {
+            btns[index].className = "button button_correct";
+        }
+ 
+        setTimeout(Update, 1000);
+    }
+ 
+    Update();
+</script>
+</body>
+</html>
