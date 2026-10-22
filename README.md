@@ -9,9 +9,13 @@
 - [Практика 9 — сайт с уроками и тестами](https://rechieone.github.io/college-portfolio/ui-development-practice-9/glavn9.html)
 - [Практика 10 — сайт с портфолио и контактами](https://rechieone.github.io/college-portfolio/ui-development-practice-10/)
 
+## Дизайн-проекты
+
+- [Кофейня — сайт на Tilda](https://choccafe.tilda.ws) — дизайн сайта, выполненный в конструкторе Tilda. Показывает работу с визуальным оформлением, без программирования.
+
 ## Технологии
 
-HTML, CSS
+HTML, CSS, Tilda (для дизайн-проектов)
 
 ## Контакты
 
