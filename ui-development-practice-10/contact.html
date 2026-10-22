@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты | Связь</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <div class="logo">LoveСайт</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="portfolio.html">Портфолио</a></li>
+                <li><a href="contact.html" class="active">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container page-start">
+        <div class="gfg-contact-form-layout glass-blur">
+            <h1 style="color: #db2777; text-align: center; margin-bottom: 10px;">Связаться с нами</h1>
+            <h3 style="text-align: center; font-size: 1.2rem; margin-bottom: 30px; color: #4c0519;">Оставьте вашу заявку на проект</h3>
+            
+            <form action="#" class="gfg-form">
+                <input type="text" placeholder="Ваше имя" class="form-input" required>
+                <input type="email" placeholder="Ваш Email" class="form-input" required>
+                
+                <!-- 7. Шаблон кастомных радио-кнопок  -->
+                <div class="radio-container">
+                    <p style="font-size: 1.1rem; margin-bottom: 15px; font-weight: bold;">Желаемый тариф:</p>
+                    <div class="radio-flex-row">
+                        <label class="radio">
+                            <input type="radio" checked name="project-tarif"> Тариф «Старт»
+                            <div class="circle"></div>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="project-tarif"> Тариф «Бизнес»
+                            <div class="circle"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 10. Кнопка с эффектом скошенного блика  -->
+                <div class="shiny-btn-container">
+                    <button class="gfg-shiny-btn" type="submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 LoveСайт. Все права защищены.</p>
+    </footer>
+</body>
+</html>

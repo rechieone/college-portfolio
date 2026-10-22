@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная | О нас</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 1. Верхнее анимированное меню  -->
+    <header class="site-header">
+        <nav class="main-nav">
+            <div class="logo">LoveСайт</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="portfolio.html">Портфолио</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. Оригинальное боковое меню -->
+    <aside class="modern-sidebar">
+        <h2>Меню</h2>
+        <a href="#about-section">О компании</a>
+        <a href="#pricing-section">Тарифные планы</a>
+        <a href="#team-section">Наша команда</a>
+    </aside>
+
+    <main class="container page-start">
+        <!-- 3. Шаблон страницы О нас -->
+<section id="about-section" class="about">
+    <h1>О нас</h1>
+    <p class="about-lead">Мы создаем современные интерактивные сайты для вашего успешного бизнеса.</p>
+    
+    <div class="about-info">
+        <!-- Блок картинок теперь сверху и имеет новый класс для центрирования -->
+        <div class="about-img centered-images">
+            <img src="pink.png" alt="О нас">
+            <img src="https://static.tildacdn.com/tild6635-3930-4937-b564-343131323634/25672383_7035387.jpg" alt="О нас">
+        </div>
+        
+        <!-- Текстовый блок под картинками -->
+        <div class="about-text-center">
+            <p>Наша веб-студия предоставляет профессиональные ИТ-ресурсы, решает сложнейшие задачи верстки интерфейсов, а также готовит будущих специалистов к успешной сдаче практических работ и экзаменов. Нас выбирают миллионы пользователей по всему миру благодаря чистому и интерактивному коду.</p>
+            <!-- 9. Кнопка с анимацией заезжающих половинок фона -->
+            <button class="gfg-animate-btn">Читать далее</button>
+        </div>
+    </div>
+</section>
+
+
+        <!-- 4. Таблица цен + 5. Эффект размытия матового стекла -->
+        <section id="pricing-section" class="pricing-container">
+            <h2>Наши цены</h2>
+            <h3>Выберите подходящий тарифный план</h3>
+            <div class="price-row">
+                <div class="price-col glass-blur">
+                    <p>Старт</p>
+                    <h3>15 000 ₽ <span>/ сайт</span></h3>
+                    <ul>
+                        <li>Базовая верстка сайта</li>
+                        <li>Адаптивный дизайн</li>
+                        <li>Стандартное меню</li>
+                    </ul>
+                    <a href="contact.html"><button class="price-btn">Выбрать</button></a>
+                </div>
+                <div class="price-col glass-blur" id="best">
+                    <p id="prem">Бизнес</p>
+                    <h3>45 000 ₽ <span>/ сайт</span></h3>
+                    <ul>
+                        <li>10 интерактивных элементов</li>
+                        <li>Матовое размытие оверлея</li>
+                        <li>Кастомные элементы форм</li>
+                    </ul>
+                    <a href="contact.html"><button class="price-btn">Выбрать</button></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция команды из шаблона -->
+        <section id="team-section" class="team">
+            <h1>Наша команда</h1>
+            <div class="team-cards">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="girl.png" alt="Елена">
+                    </div>
+                    <div class="card-info">
+                        <h2 class="card-name">Елена</h2>
+                        <p class="card-role">Основатель и генеральный директор</p>
+                        <p class="card-email">elena@example.com</p>
+                        <button class="gfg-animate-btn" style="margin: 1.5rem auto; width: 80%;">Связаться</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="boy.png" alt="Дмитрий">
+                    </div>
+                    <div class="card-info">
+                        <h2 class="card-name">Дмитрий</h2>
+                        <p class="card-role">Главный веб-разработчик и помощник директора</p>
+                        <p class="card-email">dmitry@example.com</p>
+                        <button class="gfg-animate-btn" style="margin: 1.5rem auto; width: 80%;">Связаться</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 LoveСайт. Все права защищены. Практическая работа №10.</p>
+    </footer>
+</body>
+</html>
