@@ -15,9 +15,9 @@
 
 Учебный дизайн-проект: показываю работу с композицией, цветом и типографикой. Сайт собран в конструкторе Tilda, без программирования. Не является сайтом реального заведения.
 
-<img src="Choc%20Cafe1.png" width="600" alt="Choc Café, главный экран">
-<img src="Choc%20Cafe2.png" width="600" alt="Choc Café, страница 2">
-<img src="Choc%20Cafe3.png" width="600" alt="Choc Café, страница 3">
+<img src="Choc-Cafe1.png" width="600" alt="Choc Café, главный экран">
+<img src="Choc-Cafe2.png" width="600" alt="Choc Café, страница 2">
+<img src="Choc-Cafe3.png" width="600" alt="Choc Café, страница 3">
 
 [Открыть сайт](https://choccafe.tilda.ws)
 
