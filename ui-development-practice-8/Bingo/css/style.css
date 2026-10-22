@@ -1,0 +1,728 @@
+/* 1. Подключаем шрифты */
+@font-face {
+    font-family: Rubik-medium;
+    src: url(../fonts/Rubik-Medium.ttf);
+}
+
+@font-face {
+    font-family: rubik;
+    src: url(../fonts/Rubik-Light.ttf);
+}
+
+/* 2. Убираем все внешние и внутренние отступы */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. Задаем цвет и шрифт для основного текста */
+body {
+    background-color: #fcfcfa;
+    font-family: rubik;
+}
+
+/* 4. Для заголовков задаем шрифт */
+h1, h2, h3, h4, a {
+    font-family: Rubik-medium;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* 6. При наведении курсора на гиперссылку делаем подчеркнутым */
+a:hover {
+    text-decoration: underline;
+}
+
+/* 7. section main задаем цвет фона */
+/* MAIN ----------------------------------------- */
+
+section.main {
+    background-color: #e8e7df;
+}
+
+/* HEADER ----------------------------------------- */
+
+div.header {
+    padding: 3% 0;           /* 1. Отступы сверху и снизу */
+    display: flex;           /* 2. Делаем контейнер гибким */
+    justify-content: space-around; /* 3. Распределяем элементы по ширине */
+    align-items: center;     /* 4. Выравниваем элементы по вертикали */
+}
+
+div.header div.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.logo h1 {
+    font-size: medium;
+}
+
+div.header div.nav {
+    width: 50%;
+    text-align: center;
+}
+
+div.header div.nav li {
+    list-style-type: none;
+    display: inline;
+    margin: 0 2%;
+}
+
+div.header div.icons {
+    width: 13%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+div.header div.icons img {
+    width: 25px;
+    height: 25px;
+}
+
+/* BANNER 
+-------------------------------------------------------------- */
+section.banner {
+    background-image: url("img/waves.svg");
+    background-size: 100%;
+    height: 36.5rem;
+}
+
+div.banner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+div.banner img#star_main {
+    align-self: flex-end;
+    margin-bottom: 5%;
+}
+
+div.banner img#flower_main {
+    align-self: flex-start;
+    margin-top: 5%;
+}
+
+/* 5. Задаем верхний внешний отступ для блока с текстом */
+div.banner div.information {
+    margin-top: 3rem;
+}
+
+/* 6. Для заголовков блока информации задаем размер и регистр */
+div.banner div.information h2 {
+    font-size: 4.5em;
+    text-transform: uppercase;
+}
+
+/* 7. Для заголовка с классом «blue» изменяем цвет текста */
+div.banner div.information h2.blue {
+    color: #32bfce;
+}
+
+/* 8. Для абзаца задаем стиль */
+div.banner div.information p {
+    font-weight: normal;
+}
+
+/* 9. Задаем единый стиль для кнопок */
+button {
+    background-color: #ff5b35;
+    color: #fcfcfa;
+    border: 0;
+    border-radius: 0.7rem;
+    padding: 1rem 2rem;
+    margin: 2rem 0;
+}
+
+/* ABOUT 
+-------------------------------------------------------------- */
+
+/* 1. Комментируем и делаем верхние и нижние отступы для всего блока */
+section.about {
+    padding: 8rem 0;
+}
+
+/* 2. Задаем ширину блока 80% от основного блока и выравниваем по центру */
+div.content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* 3. Блок о нас, собираем в один ряд флексбоксом */
+div.about {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 4. Задаем ширину блока с текстом */
+div.about div.text {
+    width: 50%;
+}
+
+div.text h2 {
+    margin-bottom: 2rem;
+    font-size: 3em;
+    font-weight: 400;
+}
+
+div.text p {
+    margin: 1rem 0;
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+
+div.cards {
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    margin-top: 5rem;
+    height: 25rem;
+}
+
+div.cards div.card {
+    width: 30%;
+    margin: 0 1rem;
+    border-radius: 3rem;
+    padding: 3%;
+}
+
+/* 8. Задаем фоновый цвет для каждого блока с карточками */
+div.cards div.card#first {
+    background-color: #f3e5f4;
+}
+
+div.cards div.card#second {
+    background-color: #daf3f5;
+}
+
+div.cards div.card#third {
+    background-color: #f6eed1;
+}
+
+/* 9. Задаем высоту для блока с картинками и выравнивание */
+div.cards div.card div.card_img {
+    height: 75%;
+    text-align: center;
+    padding: 3%;
+}
+
+/* 10. Масштабируем картинку по высоте блока */
+div.card_img img {
+    height: 100%;
+}
+
+/* 11. Задаем размер заголовка и отступы для абзаца */
+div.cards div.card h4 {
+    font-size: 1.2em;
+}
+
+div.cards div.card p {
+    margin: 1rem 0;
+}
+
+/* ADVANTAGES 
+-------------------------------------------------------------- */
+
+/* 1. Задаем цвет фона для всего блока и делаем закругление */
+section.advantages {
+    background-color: #e8e7df;
+    border-radius: 8rem;
+}
+
+/* 2. Задаем внутренние отступы сверху и снизу, текст выравниваем по центру */
+div.advantages {
+    padding: 8rem 0;
+    text-align: center;
+}
+
+/* 3. Задаем стили для заголовка */
+div.advantages h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+/* 4. Выстраиваем иконки в ряд во флексбоксы, выравниваем */
+div.advantage_icons {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 5. Заголовки иконок, задаем стили */
+div.advantage_icon h5 {
+    width: 60%;
+    font-size: 1.2em;
+    font-weight: bolder;
+    text-align: center;
+}
+
+div.advantage_icon#delivery h5 {
+    position: relative;
+    top: 60px;
+    left: 5px;
+}
+
+div.advantage_icon#events h5 {
+    position: relative;
+    top: 90px;
+    left: 40px;
+}
+
+div.advantage_icon#exclusive h5 {
+    position: relative;
+    top: 120px;
+    left: 32px;
+}
+
+div.advantage_icon#range h5 {
+    position: relative;
+    top: 105px;
+    left: 45px;
+}
+
+div.advantage_icon#payment h5 {
+    position: relative;
+    top: 150px;
+    left: 15px;
+}
+
+/* FAVOURITES 
+-------------------------------------------------------------- */
+
+/* 1. Делаем блок флексбоксом и задаем внутренний отступ сверху и снизу */
+div.favourites {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8rem 0;
+}
+
+/* 2. Блок текста задаем ширину 50% */
+div.favourite_text {
+    width: 50%;
+}
+
+/* 3. Задаем стили для заголовка */
+div.favourite_text h3 {
+    font-size: 4em;
+    text-transform: uppercase;
+}
+
+/* 4. Блок с карточками занимает 50% ширины во флексбоксе */
+div.favourite_cards {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+
+/* 5. Для блока карточки задаем цвет, элементы выстраиваются в колонку, внешние отступы 3% */
+div.favourite_card {
+    background-color: #e8e7df;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 3%;
+}
+
+/* 6. Заголовки карточек выравниваем по центру, внешний отступ сверху и снизу, размер */
+div.favourite_card h4 {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 1.3em;
+}
+
+/* 7. Для первой карточки задаем радиусы и ширину 80% */
+div.favourite_card#dino {
+    border-radius: 1rem 1rem 1rem 8rem;
+    width: 80%;
+}
+
+/* 8. Для второй и третьей карточки задаем радиусы и ширину 40%. 
+   В общей сумме они будут 80% блока, в результате wrap выстроит их в ряд под первой карточкой */
+div.favourite_card#treasure_hunt {
+    border-radius: 10rem;
+    width: 40%;
+}
+
+div.favourite_card#sleep_joe {
+    border-radius: 2.5rem;
+    width: 40%;
+}
+
+/* LEAD transform rotate 
+-------------------------------------------------------------- */
+
+/* 1. Вставляем фоновую картинку в блок */
+section.lead {
+    background-image: url("../img/photo.png");
+    background-size: 100%;
+}
+
+/* 2. Делаем внутренние отступы сверху и снизу, выстраиваем в линию с начала строки */
+div.lead {
+    padding: 10% 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* 3. Делаем внешний верхний отступ, который выходит за границы */
+div.label {
+    margin-top: -5%;
+}
+
+div.label h4 {
+    width: 60%;
+    font-size: 1.4em;
+    color: #32bfce;
+    position: relative;
+    top: 90px;
+    left: 30px;
+    transform: rotate(-32deg);
+}
+
+/* 5. Задаем ширину текстового поля */
+div.information_text {
+    width: 50%;
+}
+
+/* 6. Задаем стили для заголовка и абзаца (размер, регистр и внешний верхний отступ) */
+div.information_text h3 {
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+div.information_text p {
+    font-size: 1.2em;
+    margin-top: 2rem;
+}
+
+/* GAME CARD 
+-------------------------------------------------------------- */
+
+div.game {
+    padding: 10% 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 2. Для картинки первого блока задаем ширину и внешние отступы */
+div.photo {
+    width: 45%;
+    margin: 0 1rem;
+}
+
+/* 3. Картинки размещаем во всю область контейнера */
+div.photo img {
+    width: 100%;
+}
+
+/* 4. Для второго блока задаем также ширину, чтобы блоки встали в ряд, и внешние отступы */
+div.description {
+    width: 45%;
+    margin: 0 1rem;
+}
+
+/* 5. Размещаем блок во флексбокс */
+div.information_bar {
+    display: flex;
+}
+
+div.title {
+    background-color: #daf3f5;
+    border-radius: 1rem;
+    padding: 3%;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    margin-right: 2rem;
+    width: 40%;
+}
+
+/* 7. Делаем отступ от картинки и надписи */
+div.title img {
+    margin-right: 0.4rem;
+}
+
+/* 8. Изображение звезды и рейтинга собираем в один ряд относительно основного блока */
+div.rate {
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+/* 9. Делаем отступы и ширину самого контейнера картинки (звезды) */
+div.rate img#rate {
+    width: 2.2rem;
+    margin-right: 1rem;
+}
+
+/* 10. Задаем размер заголовку блока */
+div.rate h4 {
+    font-size: 2em;
+}
+
+div.descripte h3 {
+    text-transform: uppercase;
+    font-size: 3em;
+    margin: 0.8rem 0;
+}
+
+/* 12. Для иконок с характеристиками, во флексбокс */
+div.features {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 13. Для каждого блока делаем выравнивание элементов по центру */
+div.feature {
+    display: flex;
+    align-items: center;
+}
+
+div.feature img {
+    margin-right: 0.4rem;
+}
+
+/* 14. Для кнопки цену забираем во флексбокс и выравниваем */
+div.pay {
+    display: flex;
+    align-items: center;
+}
+
+div.pay h3 {
+    margin-right: 2rem;
+}
+
+div.frames{
+width: 45%;
+margin: 1rem;
+}
+
+div.frames div.tabs {
+    width: 100%;
+    background-color: #f0f0eb;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+div.frames input[type=radio]{
+    display: none;
+}
+
+div.frames label {
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 155px;
+    font-weight: bold;
+    margin: 1%;
+}
+
+/* 19. При нажатии на кнопку, меняем цвет фона */
+div.frames input[type=radio]:checked + label {
+    background-color: #f5d961;
+}
+
+/* 20. Делаем внутренние отступы для блока фрейм */
+div.frame {
+    padding-top: 1rem;
+}
+
+/* 21. Задаем отступы и размер для текста */
+div.discripte_frame p {
+    font-size: 1em;
+    margin-top: 2rem;
+}
+
+/* EVENT 
+-------------------------------------------------------------- */
+
+section.event {
+    background-image: url("img/waves_big.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 55rem;
+    padding-top: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.event {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 3. Первый блок занимает 45% от всей ширины, выровнен по началу */
+div.information_event {
+    align-self: start;
+    width: 45%;
+}
+
+/* 4. Для абзаца и заголовка первого блока задаем стиль и отступы */
+div.information_event h3 {
+    text-transform: uppercase;
+    font-size: 4em;
+    margin-bottom: 1rem;
+}
+
+div.information_event p {
+    font-size: 1.1em;
+    margin-bottom: 1rem;
+}
+
+/* 5. Для стикеров образуем wrap флексбоксы и задаем размер шрифта */
+div.information_event div.stickers {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.5em;
+}
+
+/* 6. Каждый стикер позиционируем относительно своего родителя и выравниваем */
+div.stickers div#flower {
+    position: "relative";
+    top: 100px;
+}
+
+div.stickers div#fire {
+    margin: 2%;
+}
+
+div.stickers div#rhomb {
+    position: relative;
+    top: 90px;
+}
+
+div.stickers div#arrow {
+    position: relative;
+    top: -50px;
+    left: 150px;
+    margin: 1%;
+}
+
+/* 7. Выравниваем текст относительно родителя. Поворачиваем на -14 градусов */
+
+div.stickers div#flower h5 {
+    width: 60%;
+    position: relative;
+    top: 90px;
+    left: 40px;
+}
+
+div.stickers div#fire h5 {
+    width: 40%;
+    position: relative;
+    top: 140px;
+    left: 40px;
+}
+
+div.stickers div#rhomb h5 {
+    width: 30%;
+    position: relative;
+    top: 68px;
+    left: 55px;
+}
+
+div.stickers div#arrow h5 {
+    width: 70%;
+    position: relative;
+    top: 75px;
+    left: 40px;
+    transform: rotate(-14deg);
+}
+
+/* 8. Контейнер формы занимает 40% от основного блока ширины */
+div.form {
+    width: 40%;
+}
+
+/* 9. А сама форма внутри блока полностью занимает данное пространство */
+div.form form {
+    width: 100%;
+}
+
+/* 10. Для элементов текста, почты, телефона задаем стили: цвет фона, рамку, 
+закругление, внутренние отступы, внешние отступы сверху и снизу */
+form input[type=text], input[type=email], input[type=tel] {
+    width: 100%;
+    background-color: #f0f0eb;
+    border: 1px solid #c7c7c7;
+    border-radius: 1rem;
+    padding: 3%;
+    margin: 1rem 0;
+}
+
+/* 11. Задаем цвет метки */
+label.muted {
+    color: #c7c7c7;
+}
+
+div.radio_group {
+    margin: 1rem 0;
+    display: "flex";
+    align-items: "center";
+}
+
+div.radio_group label {
+    margin-left: 0.5rem;
+    margin-right: 2rem;
+}
+
+/* FOOTER 
+-------------------------------------------------------------- */
+
+/* 1. Комментируем и задаем фоновый цвет подвала */
+footer {
+    background-color: #e8e7df;
+}
+
+/* 2. Каждый блок подвала размещаем во флексбоксе */
+div.footer {
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* 3. Каждый текст первого блока размещаем во флексбоксе 
+   и задаем размер абзацу */
+div.circle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+}
+
+div.circle p {
+    font-size: 1em;
+}
+
+/* 4. Блокам иконок задаем ширину и внутренние отступы */
+div.networks {
+    width: 10%;
+}
+
+div.networks img {
+    margin: 0 1%;
+}
+
