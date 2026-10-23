@@ -1,6 +1,6 @@
 # Резюме
 
-- [Практика 2 — квиз](https://rechieone.github.io/college-portfolio/portfolio/index.html)
+- [Хуснутдинова Камила](https://rechieone.github.io/college-portfolio/portfolio/index.html)
 
 # college-portfolio
 
