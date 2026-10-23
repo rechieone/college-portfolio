@@ -1,3 +1,7 @@
+# Резюме
+
+- [Практика 2 — квиз](https://rechieone.github.io/college-portfolio/portfolio/index.html)
+
 # college-portfolio
 
 Практические задания по UI-разработке, выполненные в рамках обучения в колледже.
