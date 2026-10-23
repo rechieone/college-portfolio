@@ -35,6 +35,12 @@
 
 <img src="dobrye-ruki.png" width="600" alt="Дизайн сайта Добрые руки">
 
+## Графический дизайн
+
+Логотипы, постеры и другие работы по графическому дизайну.
+
+[Открыть портфолио на Google Диске](https://drive.google.com/drive/folders/1-_jVdVqfSzxRswT6qFA9BgOaYqdLZKc4?usp=sharing)
+
 ## Технологии
 
 HTML, CSS, PHP, MySQL, Tilda (для дизайн-проектов), Figma
